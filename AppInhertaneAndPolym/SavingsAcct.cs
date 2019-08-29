@@ -46,6 +46,15 @@ namespace AppInheritanceAndPolym
 				thisTransaction.Detail = String.Format("Account#: {0} was debited{1}", thisTransaction.AccountNumber, thisTransaction.Amount);
 				Console.WriteLine("Successfully withdrew from " + thisTransaction.AccountNumber + " debited amount " + thisTransaction.Amount);
 			}
+
+			return thisTransaction;
 		}
+
+		public void ProcessProfit()
+		{
+			Balance += Balance * (IntRate/100);
+		}
+
+		
 	}
 }

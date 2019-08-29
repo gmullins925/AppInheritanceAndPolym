@@ -6,17 +6,37 @@ using System.Threading.Tasks;
 
 namespace AppInheritanceAndPolym
 {
+	/// <summary>
+	/// Polymorphism Implementation
+	/// </summary>
+
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			CheckingAcct myChkAccount = new CheckingAcct(1000);
-			Console.WriteLine("Initiate Witdrawal of $250");
-			myChkAccount.Withdrawal(250);
-			Console.ReadLine();
+			Account myAccount;
+			myAccount = new CheckingAcct(1000);
+			myAccount.Withdrawal(500);
+			Console.WriteLine(myAccount.GetType());
 
-			Console.WriteLine("Initiate Witdrawal of $850");
-			myChkAccount.Withdrawal(850);
+
+			myAccount = new SavingsAcct(2000, 0);
+			myAccount.Withdrawal(1500);
+			myAccount.Deposit(500);
+
+			SavingsAcct mySav = new SavingsAcct(1000, 2);
+			mySav.IntRate = 10;
+			mySav.ProcessProfit();
+			Console.WriteLine("Balance after process interest " + mySav.Balance);
+
+
+			Console.WriteLine(myAccount.Balance);
+
+			Console.WriteLine(myAccount.GetType());
+
+
+
+
 			Console.ReadLine();
 		}
 
