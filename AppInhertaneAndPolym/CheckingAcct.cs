@@ -37,7 +37,8 @@ namespace AppInheritanceAndPolym
 			{
 				Balance -= amount; //Balance = Balance - amount
 				thisTransaction.isSuccessful = true;
-				thisTransaction.Detail = String.Format("Account#: {0} was debited{1}", thisTransaction.AccountNumber, thisTransaction.Amount);
+				thisTransaction.Detail = String.Format("Account Number: {0} was debited{1}", thisTransaction.AccountNumber, thisTransaction.Amount);
+				Console.WriteLine(thisTransaction.Detail);
 				Console.WriteLine("Successfully withdrew from " + thisTransaction.AccountNumber + " debited amount " + thisTransaction.Amount);
 			}
 

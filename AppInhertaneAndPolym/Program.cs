@@ -18,6 +18,7 @@ namespace AppInheritanceAndPolym
 			myAccount = new CheckingAcct(1000);
 			myAccount.Withdrawal(500);
 			Console.WriteLine(myAccount.GetType());
+			myAccount.AccountNumber = "456789";
 
 
 			myAccount = new SavingsAcct(2000, 0);
